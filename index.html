@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Novel Reader</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">📚 My Novel Library</h1>
+            <button class="btn-icon" onclick="toggleTheme()">🎨</button>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Cari novel..." onkeyup="searchNovels()">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterByGenre('all')">Semua</button>
+            <button class="filter-btn" onclick="filterByGenre('romance')">Romance</button>
+            <button class="filter-btn" onclick="filterByGenre('harem')">Harem</button>
+            <button class="filter-btn" onclick="filterByGenre('fantasy')">Fantasy</button>
+            <button class="filter-btn" onclick="filterByGenre('action')">Action</button>
+        </div>
+
+        <!-- Novel Grid -->
+        <div id="novelGrid" class="novel-grid"></div>
+
+        <!-- Add Novel Button -->
+        <button class="fab" onclick="showAddModal()">➕</button>
+    </div>
+
+    <!-- Add Novel Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Tambah Novel Baru</h2>
+            <form id="addNovelForm">
+                <input type="text" id="novelTitle" placeholder="Judul Novel" required>
+                <select id="novelGenre" required>
+                    <option value="">Pilih Genre</option>
+                    <option value="romance">Romance</option>
+                    <option value="harem">Harem</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                </select>
+                <textarea id="novelDescription" placeholder="Deskripsi Novel" rows="3"></textarea>
+                <input type="url" id="novelCover" placeholder="URL Cover (opsional)">
+                <button type="submit" class="btn-primary">Tambah Novel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/novels.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+              </html>
