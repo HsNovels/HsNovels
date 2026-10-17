@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading - <span id="pageTitle">Novel</span></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reader.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="reader-container">
+        <!-- Reader Header -->
+        <header class="reader-header">
+            <button class="btn-back" onclick="goBack()">← Kembali</button>
+            <h2 id="chapterTitle">Chapter Title</h2>
+            <button class="btn-icon" onclick="toggleReaderSettings()">⚙️</button>
+        </header>
+
+        <!-- Reading Progress -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="readingProgress"></div>
+        </div>
+
+        <!-- Chapter Content -->
+        <div id="chapterContent" class="chapter-content"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="btn-nav" id="prevBtn" onclick="previousChapter()">
+                ← Bab Sebelumnya
+            </button>
+            <button class="btn-nav" id="nextBtn" onclick="nextChapter()">
+                Bab Selanjutnya →
+            </button>
+        </div>
+
+        <!-- Chapter List Toggle -->
+        <button class="fab chapter-list-btn" onclick="toggleChapterList()">📑</button>
+    </div>
+
+    <!-- Chapter List Sidebar -->
+    <div id="chapterSidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Daftar Bab</h3>
+            <button class="btn-close" onclick="toggleChapterList()">×</button>
+        </div>
+        <div class="search-chapter">
+            <input type="text" id="chapterSearch" placeholder="Cari bab..." onkeyup="searchChapters()">
+        </div>
+        <div id="chapterList" class="chapter-list"></div>
+    </div>
+
+    <!-- Reader Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content settings-content">
+            <span class="close" onclick="toggleReaderSettings()">&times;</span>
+            <h3>Pengaturan Tampilan</h3>
+            
+            <div class="setting-group">
+                <label>Ukuran Font:</label>
+                <input type="range" id="fontSize" min="14" max="24" value="16" onchange="updateFontSize(this.value)">
+                <span id="fontSizeValue">16px</span>
+            </div>
+
+            <div class="setting-group">
+                <label>Jenis Font:</label>
+                <select id="fontFamily" onchange="updateFontFamily(this.value)">
+                    <option value="Georgia">Georgia</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label>Tema:</label>
+                <div class="theme-options">
+                    <button class="theme-btn light" onclick="setReaderTheme('light')">☀️</button>
+                    <button class="theme-btn dark" onclick="setReaderTheme('dark')">🌙</button>
+                    <button class="theme-btn sepia" onclick="setReaderTheme('sepia')">📜</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Line Height:</label>
+                <input type="range" id="lineHeight" min="1.2" max="2.5" step="0.1" value="1.6" onchange="updateLineHeight(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/reader.js"></script>
+</body>
+  </html>
