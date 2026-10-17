@@ -1,0 +1,173 @@
+.reader-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+}
+
+.reader-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.btn-back {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #eee;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.chapter-content {
+    padding: 30px 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 15px;
+}
+
+.btn-nav {
+    flex: 1;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chapter-list-btn {
+    bottom: 100px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s;
+    z-index: 200;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-chapter {
+    padding: 15px;
+}
+
+.search-chapter input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.chapter-list {
+    padding: 10px;
+}
+
+.chapter-item {
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.chapter-item:hover {
+    background: #f0f0f0;
+}
+
+.chapter-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* Settings */
+.settings-content {
+    max-width: 400px;
+}
+
+.setting-group {
+    margin: 20px 0;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.theme-options {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.theme-btn.light { background: white; }
+.theme-btn.dark { background: #1a1a1a; }
+.theme-btn.sepia { background: #f4ecd8; }
